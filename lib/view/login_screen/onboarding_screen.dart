@@ -28,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       right: 0,
       bottom: 0,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 64, vertical: 60),
+        padding: EdgeInsets.only(left: 64, right: 64, bottom: 82),
         decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [Colors.transparent, Colors.black],
@@ -45,12 +45,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 56,
-                  color: Colors.white),
+                  color: ColorConstants.mainWhite),
             ),
             SizedBox(height: 24),
             Text(
               "Find best recipes for cooking",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: ColorConstants.mainWhite),
             ),
             SizedBox(
               height: 40,
@@ -67,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Text(
                     "Start cooking",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: ColorConstants.mainWhite,
                         fontWeight: FontWeight.w500,
                         fontSize: 16),
                   ),
@@ -80,7 +80,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
