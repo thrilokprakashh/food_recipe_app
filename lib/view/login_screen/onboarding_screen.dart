@@ -12,12 +12,32 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          _buildBackgroundImage(),
-          _buildGradientSection(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            _buildBackgroundImage(),
+            _buildGradientSection(),
+            Positioned(
+              top: 13,
+              right: 0,
+              left: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: ColorConstants.mainWhite,
+                  ),
+                  Text(
+                    "datta",
+                    style: TextStyle(color: ColorConstants.mainWhite),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
