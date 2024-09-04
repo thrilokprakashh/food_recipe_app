@@ -65,7 +65,15 @@ class _HomeScreenState extends State<HomeScreen> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Column(
                     children: [
-                      customVideoCard(),
+                      customVideoCard(
+                        rating: "4,5",
+                        image:
+                            "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                        time: "15:10",
+                        title: "How to make sushi at home",
+                        description: "By Niki Samantha ",
+                        dp: "https://images.pexels.com/photos/13733587/pexels-photo-13733587.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+                      ),
                     ],
                   ),
               separatorBuilder: (context, index) => SizedBox(width: 16),
@@ -107,7 +115,7 @@ for cooking""",
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

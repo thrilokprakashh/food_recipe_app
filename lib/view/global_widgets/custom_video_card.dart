@@ -2,7 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 
 class customVideoCard extends StatelessWidget {
+  String rating;
+  String image;
+  String title;
+  String description;
+  String dp;
+  String time;
   customVideoCard({
+    required this.rating,
+    required this.image,
+    required this.title,
+    required this.description,
+    required this.dp,
+    required this.time,
     super.key,
   });
 
@@ -19,9 +31,7 @@ class customVideoCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
-                  image: NetworkImage(
-                      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200"),
-                  fit: BoxFit.cover),
+                  image: NetworkImage(image), fit: BoxFit.cover),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +54,7 @@ class customVideoCard extends StatelessWidget {
                             color: ColorConstants.mainWhite,
                           ),
                           Text(
-                            " 4,5",
+                            rating,
                             style: TextStyle(
                                 color: ColorConstants.mainWhite,
                                 fontSize: 14,
@@ -80,7 +90,7 @@ class customVideoCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      "15:10",
+                      time,
                       style: TextStyle(
                           color: ColorConstants.mainWhite,
                           fontSize: 12,
@@ -97,7 +107,7 @@ class customVideoCard extends StatelessWidget {
           Row(
             children: [
               Text(
-                "How to make sushi at home",
+                title,
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -114,14 +124,13 @@ class customVideoCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 16,
-                backgroundImage: NetworkImage(
-                    "https://images.pexels.com/photos/13733587/pexels-photo-13733587.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"),
+                backgroundImage: NetworkImage(dp),
               ),
               SizedBox(
                 width: 8,
               ),
               Text(
-                "By Niki Samantha ",
+                description,
                 style: TextStyle(fontSize: 12, color: ColorConstants.lightGrey),
               ),
             ],
