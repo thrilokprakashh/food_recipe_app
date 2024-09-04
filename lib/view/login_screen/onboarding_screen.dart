@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 import 'package:food_recipe_app/models/utils/constans/image_constans.dart';
-import 'package:food_recipe_app/view/homescreen/bottom_navbar_screen/bottom_navBar.dart';
+import 'package:food_recipe_app/view/bottom_navbar_screen/bottom_navBar.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});

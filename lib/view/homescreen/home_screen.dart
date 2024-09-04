@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Column _titleSection() {
+  Widget _titleSection() {
     return Column(
       children: [
         Padding(
@@ -56,12 +56,26 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         SizedBox(height: 16),
-        customVideoCard(),
+        //video player section
+
+        SizedBox(
+          height: 254,
+          child: ListView.separated(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Column(
+                    children: [
+                      customVideoCard(),
+                    ],
+                  ),
+              separatorBuilder: (context, index) => SizedBox(width: 16),
+              itemCount: 10),
+        ),
       ],
     );
   }
 
-  Column textSection() {
+  Widget textSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
