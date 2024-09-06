@@ -18,7 +18,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
           itemBuilder: (context, index) => Column(
                 children: [
                   customVideoCard(
-                    // width: double.infinity,
+                    width: double.infinity,
                     rating: DummyDb.videoCardData[index]["rating"],
                     image: DummyDb.videoCardData[index]["image"],
                     time: DummyDb.videoCardData[index]["time"],
