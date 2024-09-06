@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 
 class popularCategoryCard extends StatelessWidget {
-  const popularCategoryCard({
+  String image;
+  String title;
+  String time;
+
+  popularCategoryCard({
+    required this.image,
+    required this.title,
+    required this.time,
     super.key,
   });
 
@@ -32,7 +39,7 @@ class popularCategoryCard extends StatelessWidget {
                   height: 25,
                 ),
                 Text(
-                  "Pepper sweetorn \n          ramen",
+                  title,
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                 ),
                 Column(
@@ -50,7 +57,7 @@ class popularCategoryCard extends StatelessWidget {
                         Align(
                           alignment: Alignment.bottomLeft,
                           child: Text(
-                            "10 mins",
+                            time,
                             style: TextStyle(
                                 fontSize: 12,
                                 color: ColorConstants.black,
@@ -79,8 +86,7 @@ class popularCategoryCard extends StatelessWidget {
           right: 0,
           child: CircleAvatar(
             radius: 55,
-            backgroundImage: NetworkImage(
-                "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1200"),
+            backgroundImage: NetworkImage(image),
           ),
         ),
       ],

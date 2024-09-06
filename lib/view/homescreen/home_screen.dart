@@ -100,11 +100,15 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView.separated(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => popularCategoryCard(),
+                itemBuilder: (context, index) => popularCategoryCard(
+                      image: DummyDb.popularCategoryDataList[index]['image'],
+                      title: DummyDb.popularCategoryDataList[index]['title'],
+                      time: DummyDb.popularCategoryDataList[index]['time'],
+                    ),
                 separatorBuilder: (context, index) => SizedBox(
                       width: 16,
                     ),
-                itemCount: 10),
+                itemCount: DummyDb.popularCategoryDataList.length),
           )
         ],
       ),

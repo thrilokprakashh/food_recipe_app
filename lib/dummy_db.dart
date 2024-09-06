@@ -111,4 +111,73 @@ class DummyDb {
           "https://images.pexels.com/photos/3720429/pexels-photo-3720429.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
     },
   ];
+
+  static List popularCategoryDataList = [
+    {
+      "image":
+          "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Pepper sweetorn \n          ramen",
+      "time": "10 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Avocado toast",
+      "time": "5 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Pancakes with \n       berries",
+      "time": "19 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1046791/pexels-photo-1046791.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Grilled cheese \n    sandwich",
+      "time": "6 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Caesar salad",
+      "time": "12 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": " Spaghetti \n carbonara",
+      "time": "23 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/27582689/pexels-photo-27582689/free-photo-of-a-plate-of-food-with-carrots-and-onions-on-it.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Vegetable stir-fry",
+      "time": "17 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Chicken curry",
+      "time": "25 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/20657860/pexels-photo-20657860/free-photo-of-chocolate-cookies-served-on-a-plate.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Chocolate chip \n      cookies",
+      "time": "18 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/693267/pexels-photo-693267.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Beef tacos",
+      "time": "15 mins",
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/20234578/pexels-photo-20234578/free-photo-of-cheese-spaghetti.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "title": "Margarita pizza",
+      "time": "20 mins",
+    }
+  ];
 }
