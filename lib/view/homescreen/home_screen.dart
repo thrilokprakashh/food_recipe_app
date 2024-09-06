@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_recipe_app/dummy_db.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 import 'package:food_recipe_app/view/global_widgets/custom_video_card.dart';
+import 'package:food_recipe_app/view/homescreen/widgets/popular_category_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstants.mainWhite,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -93,35 +95,17 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             height: 20,
           ),
-          Stack(
-            children: [
-              SizedBox(
-                height: 231,
-                width: 150,
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  height: 176,
-                  decoration: BoxDecoration(
-                    color: ColorConstants.primaryColor,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 0,
-                right: 0,
-                child: CircleAvatar(
-                  radius: 55,
-                  backgroundImage: NetworkImage(
-                      "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1200"),
-                ),
-              )
-            ],
-          ),
+          SizedBox(
+            height: 231,
+            child: ListView.separated(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => popularCategoryCard(),
+                separatorBuilder: (context, index) => SizedBox(
+                      width: 16,
+                    ),
+                itemCount: 10),
+          )
         ],
       ),
     );
@@ -179,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
               separatorBuilder: (context, index) => SizedBox(width: 16),
-              itemCount: 11),
+              itemCount: DummyDb.videoCardData.length),
         ),
       ],
     );
