@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RecipeDetailsPage extends StatelessWidget {
-  const RecipeDetailsPage({super.key});
-
+  RecipeDetailsPage({super.key, required this.title});
+  String title;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +25,11 @@ class RecipeDetailsPage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             child: Text(
-              "hh",
+              title,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
             ),
-          )
+          ),
+          Container()
         ],
       ),
     );

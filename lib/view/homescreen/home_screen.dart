@@ -161,7 +161,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => RecipeDetailsPage(),
+                              builder: (context) => RecipeDetailsPage(
+                                title: DummyDb.videoCardData[index]["title"],
+                              ),
                             ),
                           );
                         },

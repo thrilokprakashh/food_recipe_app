@@ -75,7 +75,9 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => RecipeDetailsPage(),
+                              builder: (context) => RecipeDetailsPage(
+                                title: DummyDb.videoCardData[index]["title"],
+                              ),
                             ),
                           );
                         },
