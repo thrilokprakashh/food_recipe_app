@@ -3,6 +3,7 @@ import 'package:food_recipe_app/dummy_db.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 import 'package:food_recipe_app/view/global_widgets/custom_video_card.dart';
 import 'package:food_recipe_app/view/homescreen/widgets/popular_category_card.dart';
+import 'package:food_recipe_app/view/recipe_details_screen/recipe_details_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -156,6 +157,14 @@ class _HomeScreenState extends State<HomeScreen> {
               itemBuilder: (context, index) => Column(
                     children: [
                       customVideoCard(
+                        onCardTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RecipeDetailsPage(),
+                            ),
+                          );
+                        },
                         rating: DummyDb.videoCardData[index]["rating"],
                         image: DummyDb.videoCardData[index]["image"],
                         time: DummyDb.videoCardData[index]["time"],

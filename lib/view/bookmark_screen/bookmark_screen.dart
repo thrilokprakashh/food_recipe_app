@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_recipe_app/dummy_db.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 import 'package:food_recipe_app/view/global_widgets/custom_video_card.dart';
+import 'package:food_recipe_app/view/recipe_details_screen/recipe_details_page.dart';
 
 class BookmarkScreen extends StatefulWidget {
   const BookmarkScreen({super.key});
@@ -70,6 +71,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               itemBuilder: (context, index) => Column(
                     children: [
                       customVideoCard(
+                        onCardTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RecipeDetailsPage(),
+                            ),
+                          );
+                        },
                         width: double.infinity,
                         rating: DummyDb.videoCardData[index]["rating"],
                         image: DummyDb.videoCardData[index]["image"],
