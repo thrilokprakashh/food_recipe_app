@@ -163,6 +163,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             MaterialPageRoute(
                               builder: (context) => RecipeDetailsPage(
                                 title: DummyDb.videoCardData[index]["title"],
+                                image: DummyDb.videoCardData[index]["image"],
+                                rating: DummyDb.videoCardData[index]["rating"],
+                                dp: DummyDb.videoCardData[index]["dp"],
+                                userName: DummyDb.videoCardData[index]
+                                    ["description"],
                               ),
                             ),
                           );

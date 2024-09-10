@@ -8,4 +8,5 @@ class ColorConstants {
   static const Color lightblack = Color(0xFF303030);
   static const Color lightGrey = Color(0xFF8C8C8C);
   static const Color greyShade3 = Color(0xffF1F1F1);
+  static const Color icons = Color(0xffFFB661);
 }

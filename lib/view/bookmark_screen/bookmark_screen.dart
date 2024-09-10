@@ -77,6 +77,11 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             MaterialPageRoute(
                               builder: (context) => RecipeDetailsPage(
                                 title: DummyDb.videoCardData[index]["title"],
+                                image: DummyDb.videoCardData[index]["image"],
+                                rating: DummyDb.videoCardData[index]["rating"],
+                                dp: DummyDb.videoCardData[index]["dp"],
+                                userName: DummyDb.videoCardData[index]
+                                    ["description"],
                               ),
                             ),
                           );

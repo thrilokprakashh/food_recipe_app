@@ -137,7 +137,7 @@ class customVideoCard extends StatelessWidget {
                   width: 8,
                 ),
                 Text(
-                  description,
+                  "by$description",
                   style:
                       TextStyle(fontSize: 12, color: ColorConstants.lightGrey),
                 ),
