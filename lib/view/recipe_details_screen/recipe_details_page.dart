@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 import 'package:food_recipe_app/view/global_widgets/customButton.dart';
+import 'package:food_recipe_app/view/global_widgets/customListTile.dart';
 
 class RecipeDetailsPage extends StatelessWidget {
   RecipeDetailsPage(
@@ -34,12 +35,51 @@ class RecipeDetailsPage extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        child: Column(
-          children: [
-            _buildTitleSection(), // first section
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _buildTitleSection(), // first section
+              SizedBox(
+                height: 26,
+              ),
+
+              _buildIngredientsSection() //second section
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Column _buildIngredientsSection() {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Ingredients",
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+            ),
+            Text(
+              "5 items",
+              style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 14,
+                  color: ColorConstants.grey),
+            ),
+          ],
+        ),
+        ListView.separated(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => CustomListTile(),
+            separatorBuilder: (context, index) => SizedBox(
+                  height: 12,
+                ),
+            itemCount: 10)
+      ],
     );
   }
 
