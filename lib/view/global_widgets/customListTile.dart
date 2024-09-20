@@ -4,7 +4,9 @@ import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 class CustomListTile extends StatelessWidget {
   const CustomListTile({
     super.key,
+    this.haveArrow = false,
   });
+  final bool haveArrow;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,13 @@ class CustomListTile extends StatelessWidget {
           SizedBox(
             width: 8,
           ),
-          Icon(Icons.arrow_forward_outlined, color: ColorConstants.black),
+          haveArrow
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Icon(Icons.arrow_forward_outlined,
+                      color: ColorConstants.black),
+                )
+              : SizedBox()
         ],
       ),
     );

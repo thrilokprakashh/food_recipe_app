@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 import 'package:food_recipe_app/view/bookmark_screen/bookmark_screen.dart';
+import 'package:food_recipe_app/view/create_recipeScreen/createRecipeScreen.dart';
 import 'package:food_recipe_app/view/homescreen/home_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -32,7 +33,14 @@ class _BottomNavbarState extends State<BottomNavbar> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Createrecipescreen(),
+            ),
+          );
+        },
         child: Icon(
           Icons.add,
           color: ColorConstants.mainWhite,
