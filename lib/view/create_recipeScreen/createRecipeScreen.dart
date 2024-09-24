@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
+import 'package:food_recipe_app/view/global_widgets/customListTile.dart';
 
 class Createrecipescreen extends StatefulWidget {
   const Createrecipescreen({super.key});
@@ -73,11 +74,43 @@ class _CreaterecipescreenState extends State<Createrecipescreen> {
                         color: ColorConstants.mainWhite,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(height: 16),
+          TextFormField(
+            decoration: InputDecoration(
+              hintText: "Name",
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: ColorConstants.primaryColor),
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          CustomListTile(
+            haveArrow: true,
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          CustomListTile(
+            haveArrow: true,
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          Text(
+            "Ingredients",
+            style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: ColorConstants.black,
+                fontSize: 24),
+          ),
         ],
       ),
     );
