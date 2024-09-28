@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/dummy_db.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
+import 'package:food_recipe_app/view/global_widgets/custom_recipeCard.dart';
 import 'package:food_recipe_app/view/global_widgets/custom_video_card.dart';
 import 'package:food_recipe_app/view/recipe_details_screen/recipe_details_page.dart';
 
@@ -66,41 +67,50 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               ],
             ),
           ),
-          body: ListView.separated(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              itemBuilder: (context, index) => Column(
-                    children: [
-                      customVideoCard(
-                        onCardTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RecipeDetailsPage(
-                                title: DummyDb.videoCardData[index]["title"],
-                                image: DummyDb.videoCardData[index]["image"],
-                                rating: DummyDb.videoCardData[index]["rating"],
-                                dp: DummyDb.videoCardData[index]["dp"],
-                                userName: DummyDb.videoCardData[index]
-                                    ["description"],
-                              ),
-                            ),
-                          );
-                        },
-                        width: double.infinity,
-                        rating: DummyDb.videoCardData[index]["rating"],
-                        image: DummyDb.videoCardData[index]["image"],
-                        time: DummyDb.videoCardData[index]["time"],
-                        title: DummyDb.videoCardData[index]["title"],
-                        description: DummyDb.videoCardData[index]
-                            ["description"],
-                        dp: DummyDb.videoCardData[index]["dp"],
-                      ),
-                    ],
-                  ),
-              separatorBuilder: (context, index) => SizedBox(height: 16),
-              itemCount: DummyDb.videoCardData.length),
+          body: TabBarView(children: [
+            _buildVideosTab(),
+            ListView.separated(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                itemBuilder: (context, index) => CustomRecipecard(),
+                separatorBuilder: (context, index) => SizedBox(height: 16),
+                itemCount: 10)
+          ]),
         ),
       ),
     );
+  }
+
+  ListView _buildVideosTab() {
+    return ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        itemBuilder: (context, index) => Column(
+              children: [
+                customVideoCard(
+                  onCardTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RecipeDetailsPage(
+                          title: DummyDb.videoCardData[index]["title"],
+                          image: DummyDb.videoCardData[index]["image"],
+                          rating: DummyDb.videoCardData[index]["rating"],
+                          dp: DummyDb.videoCardData[index]["dp"],
+                          userName: DummyDb.videoCardData[index]["description"],
+                        ),
+                      ),
+                    );
+                  },
+                  width: double.infinity,
+                  rating: DummyDb.videoCardData[index]["rating"],
+                  image: DummyDb.videoCardData[index]["image"],
+                  time: DummyDb.videoCardData[index]["time"],
+                  title: DummyDb.videoCardData[index]["title"],
+                  description: DummyDb.videoCardData[index]["description"],
+                  dp: DummyDb.videoCardData[index]["dp"],
+                ),
+              ],
+            ),
+        separatorBuilder: (context, index) => SizedBox(height: 16),
+        itemCount: DummyDb.videoCardData.length);
   }
 }

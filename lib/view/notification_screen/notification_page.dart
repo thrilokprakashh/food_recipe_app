@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
+import 'package:food_recipe_app/view/global_widgets/notificationTile.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -70,7 +71,70 @@ class _NotificationPageState extends State<NotificationPage> {
             ],
           ),
         ),
-        backgroundColor: Colors.red,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text(
+                "Today",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: ColorConstants.black,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: notificationTile(
+                title: "New recipe!",
+              ),
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: notificationTile(
+                title: "Don’t forget to try your saved recipe",
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              child: Text(
+                "Yesterday",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: ColorConstants.black,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: notificationTile(
+                title: "Don’t forget to try your saved recipe",
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Center(
+              child: Text(
+                "You’re all set!",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: ColorConstants.grey,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

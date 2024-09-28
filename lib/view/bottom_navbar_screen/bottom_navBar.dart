@@ -4,6 +4,7 @@ import 'package:food_recipe_app/view/bookmark_screen/bookmark_screen.dart';
 import 'package:food_recipe_app/view/create_recipeScreen/createRecipeScreen.dart';
 import 'package:food_recipe_app/view/homescreen/home_screen.dart';
 import 'package:food_recipe_app/view/notification_screen/notification_page.dart';
+import 'package:food_recipe_app/view/profile_screen/profile_page.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
@@ -18,9 +19,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
     HomeScreen(),
     BookmarkScreen(),
     NotificationPage(),
-    Container(
-      color: Colors.blue,
-    ),
+    ProfilePage()
   ];
 
   @override
