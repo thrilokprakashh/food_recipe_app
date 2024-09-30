@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
 
-class CustomRecipecard extends StatefulWidget {
-  const CustomRecipecard({super.key});
+class CustomRecipecard extends StatelessWidget {
+  const CustomRecipecard(
+      {super.key,
+      required this.rating,
+      required this.description,
+      required this.image});
+  final String rating;
+  final String description;
+  final String image;
 
-  @override
-  State<CustomRecipecard> createState() => _CustomRecipecardState();
-}
-
-class _CustomRecipecardState extends State<CustomRecipecard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,11 +20,11 @@ class _CustomRecipecardState extends State<CustomRecipecard> {
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(
-              "https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=1200"),
+          image: NetworkImage(image),
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -41,7 +43,7 @@ class _CustomRecipecardState extends State<CustomRecipecard> {
                       color: ColorConstants.mainWhite,
                     ),
                     Text(
-                      "rating",
+                      rating,
                       style: TextStyle(
                           color: ColorConstants.mainWhite,
                           fontSize: 14,
@@ -54,9 +56,33 @@ class _CustomRecipecardState extends State<CustomRecipecard> {
               CircleAvatar(
                 radius: 20,
                 backgroundColor: ColorConstants.mainWhite,
-                child: Icon(Icons.bookmark_border),
+                child: Icon(
+                  Icons.more_horiz,
+                  color: ColorConstants.primaryColor,
+                ),
               ),
             ],
+          ),
+          Spacer(),
+          SizedBox(
+            width: 163,
+            child: Text(
+              description,
+              style: TextStyle(
+                  color: ColorConstants.mainWhite,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Text(
+            "12 Ingredients | 40 min",
+            style: TextStyle(
+                color: ColorConstants.mainWhite,
+                fontSize: 12,
+                fontWeight: FontWeight.normal),
           ),
         ],
       ),
