@@ -12,36 +12,70 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'My profile',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'My profile',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+          ),
+          actions: [
+            Icon(
+              Icons.more_horiz,
+              size: 30,
+              color: ColorConstants.black,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+          ],
         ),
-        actions: [
-          Icon(
-            Icons.more_horiz,
-            size: 30,
-            color: ColorConstants.black,
-          ),
-          SizedBox(
-            width: 20,
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          _buildProfileImageSection(),
-          _buildProfileDataSection(),
-          Divider(),
-          _buildTabSection()
-        ],
+        body: Column(
+          children: [
+            _buildProfileImageSection(),
+            _buildProfileDataSection(),
+            Divider(),
+            _buildTabSection()
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildTabSection() => Column(
-        children: [],
+        children: [
+          TabBar(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            dividerHeight: 0,
+            indicatorSize: TabBarIndicatorSize.tab,
+            labelColor: ColorConstants.mainWhite,
+            indicator: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: ColorConstants.primaryColor,
+            ),
+            tabs: [
+              Tab(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Text(
+                    "Video",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+              Tab(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Text(
+                    "Recipe",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       );
 
   Widget _buildProfileDataSection() => Padding(

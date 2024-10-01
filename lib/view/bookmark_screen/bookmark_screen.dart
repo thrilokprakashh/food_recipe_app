@@ -67,18 +67,21 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               ],
             ),
           ),
-          body: TabBarView(children: [
-            _buildVideosTab(),
-            ListView.separated(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                itemBuilder: (context, index) => CustomRecipecard(
-                      rating: DummyDb.videoCardData[index]["rating"],
-                      image: DummyDb.videoCardData[index]["image"],
-                      description: DummyDb.videoCardData[index]["description"],
-                    ),
-                separatorBuilder: (context, index) => SizedBox(height: 16),
-                itemCount: 10)
-          ]),
+          body: TabBarView(
+            children: [
+              _buildVideosTab(),
+              ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  itemBuilder: (context, index) => CustomRecipecard(
+                        rating: DummyDb.videoCardData[index]["rating"],
+                        image: DummyDb.videoCardData[index]["image"],
+                        description: DummyDb.videoCardData[index]
+                            ["description"],
+                      ),
+                  separatorBuilder: (context, index) => SizedBox(height: 16),
+                  itemCount: 10)
+            ],
+          ),
         ),
       ),
     );
