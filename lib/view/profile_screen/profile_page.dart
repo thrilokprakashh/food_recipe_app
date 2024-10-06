@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe_app/dummy_db.dart';
 import 'package:food_recipe_app/models/utils/constans/color_constants.dart';
+import 'package:food_recipe_app/view/global_widgets/custom_recipeCard.dart';
+import 'package:food_recipe_app/view/global_widgets/custom_video_card.dart';
 import 'package:food_recipe_app/view/profile_screen/widget/custom_profileDataCard.dart';
+import 'package:food_recipe_app/view/recipe_details_screen/recipe_details_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -36,14 +40,21 @@ class _ProfilePageState extends State<ProfilePage> {
             _buildProfileImageSection(),
             _buildProfileDataSection(),
             Divider(),
-            _buildTabSection()
+            _buildTabBarSection(),
+            _buildTabBarView(),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildTabSection() => Column(
+  Widget _buildTabBarView() => Expanded(
+         child: TabBarView(
+          children: [_buildRecipeTab(), _buildTab()],
+        ),
+      );
+
+  Widget _buildTabBarSection() => Column(
         children: [
           TabBar(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
@@ -77,6 +88,51 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       );
+  ListView _buildRecipeTab() {
+    return ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        itemBuilder: (context, index) => Column(
+              children: [
+                customVideoCard(
+                  onCardTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RecipeDetailsPage(
+                          title: DummyDb.videoCardData[index]["title"],
+                          image: DummyDb.videoCardData[index]["image"],
+                          rating: DummyDb.videoCardData[index]["rating"],
+                          dp: DummyDb.videoCardData[index]["dp"],
+                          userName: DummyDb.videoCardData[index]["description"],
+                        ),
+                      ),
+                    );
+                  },
+                  width: double.infinity,
+                  rating: DummyDb.videoCardData[index]["rating"],
+                  image: DummyDb.videoCardData[index]["image"],
+                  time: DummyDb.videoCardData[index]["time"],
+                  title: DummyDb.videoCardData[index]["title"],
+                  description: DummyDb.videoCardData[index]["description"],
+                  dp: DummyDb.videoCardData[index]["dp"],
+                ),
+              ],
+            ),
+        separatorBuilder: (context, index) => SizedBox(height: 16),
+        itemCount: DummyDb.videoCardData.length);
+  }
+
+  ListView _buildTab() {
+    return ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        itemBuilder: (context, index) => CustomRecipecard(
+              rating: DummyDb.videoCardData[index]["rating"],
+              image: DummyDb.videoCardData[index]["image"],
+              description: DummyDb.videoCardData[index]["description"],
+            ),
+        separatorBuilder: (context, index) => SizedBox(height: 16),
+        itemCount: 10);
+  }
 
   Widget _buildProfileDataSection() => Padding(
         padding: const EdgeInsets.all(8.0),
